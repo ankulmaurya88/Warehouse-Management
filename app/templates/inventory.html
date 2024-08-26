@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Current Inventory</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Source</th>
+            <th>Quantity</th>
+            <th>Storage Zone</th>
+            <th>Received At</th>
+            <th>Packaging Type</th>
+            <th>Shelf Life Days</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in produce %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.source }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.storage_zone }}</td>
+            <td>{{ item.received_at }}</td>
+            <td>{{ item.packaging_type }}</td>
+            <td>{{ item.shelf_life_days }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
